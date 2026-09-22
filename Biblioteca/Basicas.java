@@ -40,4 +40,18 @@ public class Basicas {
         return transposed;
     }
 
+    //funcion que devuelve la traza de una matriz de enteros cuadrada
+    public static int trace(int[][] array) {
+        int rows = array.length;
+        int cols = array[0].length;
+        if (rows != cols) {
+            throw new IllegalArgumentException("La matriz no es cuadrada");
+        }
+        int trace = 0;
+        for (int i = 0; i < rows; i++) {
+            trace += array[i][i];
+        }
+        return trace;
+    }
+
 }
