@@ -27,7 +27,7 @@ public class Basicas {
         }
     }
 
-    //funcion que traspone una matriz de enteros
+    // funcion que traspone una matriz de enteros
     public static int[][] transpose(int[][] array) {
         int rows = array.length;
         int cols = array[0].length;
@@ -40,7 +40,7 @@ public class Basicas {
         return transposed;
     }
 
-    //funcion que devuelve la traza de una matriz de enteros cuadrada
+    // funcion que devuelve la traza de una matriz de enteros cuadrada
     public static int trace(int[][] array) {
         int rows = array.length;
         int cols = array[0].length;
@@ -54,7 +54,7 @@ public class Basicas {
         return trace;
     }
 
-    //funcion que devuelve si la matriz es simetrica o no
+    // funcion que devuelve si la matriz es simetrica o no
     public static boolean isSymmetric(int[][] array) {
         int rows = array.length;
         int cols = array[0].length;
@@ -69,6 +69,25 @@ public class Basicas {
             }
         }
         return true;
+    }
+
+    // comprobar si la matriz es diagonal y su traza
+    public static void isDiagonal(int[][] array) {
+        int rows = array.length;
+        int cols = array[0].length;
+        if (rows != cols) {
+            System.out.println("La matriz no es cuadrada");
+            return;
+        }
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                if (i != j && array[i][j] != 0) {
+                    System.out.println("La matriz no es diagonal");
+                    return;
+                }
+            }
+        }
+        System.out.println("La matriz es diagonal y su traza es: " + trace(array));
     }
 
 }
