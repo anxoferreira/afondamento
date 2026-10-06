@@ -90,4 +90,50 @@ public class Basicas {
         System.out.println("La matriz es diagonal y su traza es: " + trace(array));
     }
 
+    // suma de dos arrays
+    public static int[][] sumaArrays(int[][] array1, int[][] array2) {
+        int rows = array1.length;
+        int cols = array1[0].length;
+        if (rows != array2.length || cols != array2[0].length) {
+            throw new IllegalArgumentException("Las matrices no tienen las mismas dimensiones");
+        }
+        int[][] suma = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                suma[i][j] = array1[i][j] + array2[i][j];
+            }
+        }
+        return suma;
+    }
+
+    // resta de dos arrays
+    public static int[][] restaArrays(int[][] array1, int[][] array2) {
+        int rows = array1.length;
+        int cols = array1[0].length;
+        if (rows != array2.length || cols != array2[0].length) {
+            throw new IllegalArgumentException("Las matrices no tienen las mismas dimensiones");
+        }
+        int[][] resta = new int[rows][cols];
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < cols; j++) {
+                resta[i][j] = array1[i][j] - array2[i][j];
+            }
+        }
+        return resta;
+    }
+
+    // producto de matrices
+    public static int[][] productoArrays(int[] array1, int[] array2) {
+        if (array1.length != array2.length) {
+            throw new IllegalArgumentException("Los arrays no tienen las mismas dimensiones");
+        }
+        int[][] producto = new int[array1.length][array2.length];
+        for (int i = 0; i < array1.length; i++) {
+            for (int j = 0; j < array2.length; j++) {
+                producto[i][j] = array1[i] * array2[j];
+            }
+        }
+        return producto;
+    }
+
 }
